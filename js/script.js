@@ -3,40 +3,47 @@
                               // NOTA1: e' richiesta la sola dropdown del menu in alto
                               // NOTA2: come sempre massima priorita' al js rispetto al html/css
 
+// GOAL: sfruttando quando visto questa mattina a lezione, riprodurre la dropdown (menu in alto) 
+// che trovate al sito di Revolut linkato qua sotto.
+// NOTA1: e' richiesta la sola dropdown del menu in alto
+// NOTA2: come sempre massima priorita' al js rispetto al html/css
+
 function handlerIn () {
 
      var $activeLink = $('li').find('.js-link');
 
      var $activeDropdown = $('li').find('.js-none');
 
-     console.log($activeDropdown);
-
-     console.log($activeLink);
 
      
      $activeLink.hover (function() {
 
 
-          var $activeDropdown = $('li').find('.js-none');
+          var $actualLink = $(this);
 
-          var $index = $(this).next('div').data('dropdown');
+          var $actualDropdown = $(this).next();
 
-          console.log($activeDropdown.eq($index));
-
-          console.log($index);
+          console.log(!$activeDropdown.hasClass('js-none'));
 
 
-          if( !$activeDropdown.eq($index).hasClass('js-none')) {
 
-               $(this).next('div').addClass('js-none');
-               
-          } 
+          if ( $activeDropdown.hasClass('dropdown') ) {
+
+               $('li > div').addClass('js-none');
+               $('li > div').removeClass('dropdown');
+
           
 
-          $(this).next('.js-none').removeClass('js-none');
+          }
+
+
+          $(this).next('.js-none').removeClass('js-none').addClass('dropdown');
+
+          console.log($actualDropdown);
+
+          console.log(!$activeDropdown.hasClass('js-none'));
 
           console.log('entrata')
-
 
      }, function() {
 
@@ -45,25 +52,11 @@ function handlerIn () {
 
                $activeDropdown.addClass('js-none');
 
-
           });
           
-
      });
      
 }
 
 $(document).ready(handlerIn);
 
-
-
-                              
-
-// function final() {
-
-     
-
-
-// }
-
-// $(document).ready(final);
