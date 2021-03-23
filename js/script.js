@@ -18,12 +18,20 @@ function handlerIn () {
 
           $(this).next('.js-none').removeClass('js-none');
 
+          console.log('entrata')
+
+          console.log($(this));
+
           
-     }), function() {
+     }, function() {
 
-          $(this).find('.js-none').addClass('js-none');
+          $('body').click(function () {
 
-     }
+               $activeDropdown.addClass('js-none');
+               
+          });
+
+     });
 
      
 }
