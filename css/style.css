@@ -9,8 +9,69 @@
 }
 
 body {
+
     height: 100vh;
 
-    background-color: red;
-    
+}
+
+.container {
+
+    width: 70%;
+
+    margin: 0 auto;
+
+}
+
+header {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    height: 100px;
+
+}
+
+ul, ul li {
+
+    display: inline-block;
+    margin: 0 15px;
+
+}
+
+ul li a {
+    font-size: 20px;
+
+    text-decoration: none;
+
+    color: grey;
+
+    vertical-align: bottom;
+}
+
+li > img {
+
+    width: 20px;
+
+    height: auto;
+}
+
+button {
+
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20px;
+}
+
+header ul:last-child li:last-child button {
+
+    width: 150px;
+    color: white;
+    background-color: black;
 }
