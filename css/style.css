@@ -39,6 +39,7 @@ header {
 ul, ul li {
 
     display: inline-block;
+
     margin: 0 15px;
 
 }
@@ -74,4 +75,48 @@ header ul:last-child li:last-child button {
     width: 150px;
     color: white;
     background-color: black;
+}
+
+header ul:last-child li {
+
+    position: relative;
+}
+
+header ul:last-child li div{
+
+    position: absolute;
+    top: 30px;
+    left: -30px;
+}
+
+header ul:last-child li div li {
+
+    margin: 10px 0;
+
+    color: grey;
+
+    font-size: 20px;
+
+}
+
+.js-none {
+
+    display: none;
+
+}
+
+.features-box {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    flex-direction: row;
+
+
+}
+
+.features-box ul {
+
+    flex-basis: 25%;
 }
