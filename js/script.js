@@ -16,23 +16,40 @@ function handlerIn () {
      
      $activeLink.hover (function() {
 
+
+          var $activeDropdown = $('li').find('.js-none');
+
+          var $index = $(this).next('div').data('dropdown');
+
+          console.log($activeDropdown.eq($index));
+
+          console.log($index);
+
+
+          if( !$activeDropdown.eq($index).hasClass('js-none')) {
+
+               $(this).next('div').addClass('js-none');
+               
+          } 
+          
+
           $(this).next('.js-none').removeClass('js-none');
 
           console.log('entrata')
 
-          console.log($(this));
 
-          
      }, function() {
+
 
           $('body').click(function () {
 
                $activeDropdown.addClass('js-none');
-               
+
+
           });
+          
 
      });
-
      
 }
 
